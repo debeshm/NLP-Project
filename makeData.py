@@ -19,7 +19,7 @@ from sklearn.manifold import TSNE
 from sklearn.decomposition import TruncatedSVD
 from sklearn.preprocessing import normalize
 
-walk_dir = '../maildir2'
+walk_dir = '../maildir'
 messages = []
 
 print('walk_dir = ' + walk_dir)
