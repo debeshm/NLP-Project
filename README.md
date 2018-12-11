@@ -5,10 +5,10 @@ Python packages that need to be installed gensim, pydot, nltk, keras, tensorflow
 First dataset needs to be created.
 Assuming it is available we can train and test out model.
 
-To create dataset keep email csv file in a folder 'maildir' and run python makeData.py
+To preprocess dataset, enron email corpus has to be generated and saved in a directory named 'maildir'. Then run 'python makeData.py' to generate email response pairs in 'email_response.json'.
 
-To Train the model run trainer.py
-To test the model run tester.py
+To Train the model run 'python trainer.py'
+To test the model run 'python tester.py'
 
 
 FILE DESCRIPTIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -56,14 +56,14 @@ helpers.py-----------------------------------------------------
  * This code contains helper functions that helps in parsing extracting the basic components of an email
    such as body, sent to, send from.
  * we consider only the subject and the body of the email.
- * The emails are returned in a JSON format where the subject is the key and under the key the emails are present.
+ * The emails are returned in a JSON format where the subject is the key and under the key the emails are present. First mail corresponding to the list of one subject as key would be the original mail and then the responses to that mail.
 
 ---------------------------------------------------------------
 
 makeData.py----------------------------------------------------
 
  * Does basic pre procesing of emails
- * This file contains the code that reads ENRON dataset from a csv file and uses the 
+ * This file contains the code that reads ENRON dataset in its raw form and uses the 
    helper functions in helper.py to create the JSON data
 
 ----------------------------------------------------------------
